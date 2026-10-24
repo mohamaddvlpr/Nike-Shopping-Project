@@ -1,0 +1,360 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframe navAnimate {
+    0%{ 
+        transform: translateX(180px)
+    }
+
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #fefaff;
+    height: 100vh;
+}
+
+.dark {
+    background: linear-gradient(black, rgb(46, 46, 46));
+    color: white;
+}
+
+.current-page {
+    background-color: #535353;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader .logo {
+    width: 100px;
+    height: 100px;
+    animation: logoRound 1s ease-in-out infinite;
+}
+
+@keyframes logoRound {
+    0% {
+        transform: rotate(0deg);
+    } 
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.headerList {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.headerList.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+    background-color: rgb(210, 210, 210);
+    opacity: 0.4;
+  height: 500px;
+}
+
+.header-mobile {
+    display: none;
+}
+
+@keyframe navAnimate {
+    0%{ 
+        transform: translateX(180px)
+    }
+
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.headerDesktop{
+    display: flex;
+    padding: 30px 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerMobile{
+    display: flex;
+    padding: 30px 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerDesktop img{
+    width: 100px;
+}
+
+.headerDesktop nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.searchInput {
+  background-color: rgb(181, 179, 179);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+
+.aside-mobile {
+    /* transform: translateX(360px); */
+    transition: 1s;
+    display: none;
+}
+
+.aside-mobile-open {
+    /* transform: translateX(0); */
+    background-color: rgba(229, 229, 229, 0.8);
+    height: 5vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+    align-items: center;
+    top: 0;
+    right: 0;
+    /* z-index: 5; */
+    /* animation: navAnimate 1s ease-in; */
+}
+
+.aside-mobile-open img {
+    width: 60px;
+}
+
+.aside-mobile nav ul {
+    list-style: none;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #43404c;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+
+
+.headerDesktop .btn-link{
+    background-color: #242526;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+
+.headerDesktop .btn-link:hover{
+  transform: translateY(-2px);
+}
+
+.productListBox{ 
+    display: none;
+    background-color: rgba(255, 255, 255, 0.4 );
+    /* background-color: red; */
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    max-width: 200px;
+    gap: 30px;
+    top: 70px;
+    right: 700px;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    z-index: 99;
+}
+
+.list-product:hover .productListBox{
+    display: flex;
+}
+
+.productListBox h3{ 
+    margin-bottom: 10px;
+}
+
+.productListBox ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+}
+
+.shoes {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.shoes .product{
+    padding: 20px 30px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.shoes .product:hover {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0 ,0.1);
+    transform: scale(1.01);
+}
+
+.shoes .product h2 {
+    color: #242526;
+    margin: 4px 0;
+}
+
+.shoes .product p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.shoes .product .btn-cart{ 
+    margin: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product .btn-cart .shopCart {
+    display: none;
+    gap: 5px;
+}
+
+.product .btn-cart .shopCart button{
+    background-color: white;
+    color: #202122;
+    font-weight: bold;
+    transition: 0.3s ease-out;
+}
+
+.product .btn-cart .shopCart button:hover{
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.shoes .product .btn-cart .price{ 
+    color: #242526;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.shoes .product .btn-cart button{ 
+    background-color: #242526;
+    padding: 5px;
+    border: none;
+    border: 3px;
+    color: white;
+    font-family: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.shoes .product .btn-cart button:hover{ 
+    transform: translateY(-3px);
+}
+
+.shoes .product img {
+    width: 300px;
+}
+
+@media(max-width: 1150px) {
+    .shoes{ 
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .shoes .product {
+        padding: 15px 20px;
+        /* margin: auto; */
+        text-align: center;
+    }
+
+    .shoes .product h2 {
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .shoes .product img{ 
+        width: 200px;
+        /* margin: 0 auto; */
+        text-align: center;
+    }
+}
+
+@media(max-width:750px) {
+    .headerDesktop, .headerDesktop nav ul li a {
+        display: none;
+    }
+
+    .header-mobile{ 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+    }
+
+    .header-mobile div {
+        cursor: pointer;
+    }
+
+    .header-mobile img {
+        width: 80px;
+    }
+
+    .hero .image-hero img {
+        width: 300px;
+    }
+
+
+}
+
+@media(max-width: 550px) {
+
+    .header-mobile {
+        /* position: f; */
+    }
+
+    .shoes{ 
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

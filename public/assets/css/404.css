@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #fefaff;
+    height: 100vh;
+    
+}
+
+.dark {
+    background: linear-gradient(black, rgb(46, 46, 46));
+    color: white;
+}
+
+.dark * {
+    color: white;
+}
+
+.current-page {
+    background-color: #18191a;
+    padding: 8px;
+    border-radius: 8px;
+    color: #2c6fac;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader .logo {
+    width: 100px;
+    height: 100px;
+    animation: logoRound 1s ease-in-out infinite;
+}
+
+@keyframes logoRound {
+    0% {
+        transform: rotate(0deg);
+    } 
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.headerList {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.headerList.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+    background-color: rgb(210, 210, 210);
+    opacity: 0.4;
+  height: 500px;
+}
+
+.header-mobile {
+    display: none;
+}
+
+@keyframe navAnimate {
+    0%{ 
+        transform: translateX(180px)
+    }
+
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.headerDesktop{
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerMobile{
+    display: flex;
+    padding: 30px 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerDesktop img{
+    width: 100px;
+}
+
+.headerDesktop nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.aside-mobile {
+    /* transform: translateX(360px); */
+    transition: 1s;
+    display: none;
+}
+
+.aside-mobile-open {
+    /* transform: translateX(0); */
+    background-color: rgba(229, 229, 229, 0.8);
+    height: 5vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+    align-items: center;
+    top: 0;
+    right: 0;
+    /* z-index: 5; */
+    /* animation: navAnimate 1s ease-in; */
+}
+
+.aside-mobile-open img {
+    width: 60px;
+}
+
+.aside-mobile nav ul {
+    list-style: none;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #43404c;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+ul li a:hover{
+    color: #131313;
+  
+}
+
+.headerDesktop .btn-link{
+    background-color: #101112;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+
+.headerDesktop .btn-link:hover{
+  transform: translateY(-2px);
+}
+
+.productListBox{ 
+    display: none;
+    background-color: rgba(255, 255, 255, 0.4 );
+    /* background-color: red; */
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    max-width: 200px;
+    gap: 30px;
+    top: 70px;
+    right: 700px;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    z-index: 99;
+}
+
+.list-product:hover .productListBox{
+    display: flex;
+}
+
+.productListBox h3{ 
+    margin-bottom: 10px;
+}
+
+.productListBox ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+}
+
+
+/* Center content */
+.error-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.error-box{
+    max-width: 600px;
+}
+
+.error-code{
+    font-size: 120px;
+    font-weight: bold;
+    color: #191a1b;
+    margin: 0;
+}
+
+.error-title{
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.error-text{
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.btn-home{
+    display: inline-block;
+    padding: 12px 25px;
+    background: #191a1b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-home:hover{
+    background: #191a1b;
+}
+
+/* Decorative circles */
+.circle{
+    width: 200px;
+    height: 200px;
+    background: #191a1b;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: -1;
+}
+
+.circle2{
+    width: 250px;
+    height: 250px;
+    background: #191a1b;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    z-index: -1;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    padding: 20px;
+    background: #191a1b;
+    color: white;
+}
