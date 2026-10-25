@@ -67,7 +67,4 @@ NikeePro is a web development project focused on building an e-commerce platform
 
 This project is intended for educational and portfolio purposes. Nike and related trademarks belong to their respective owners.
 
-## Watch Output
-
-You Can Watch https://mohamaddvlpr.github.io/Nike-Shopping-Project/
 
